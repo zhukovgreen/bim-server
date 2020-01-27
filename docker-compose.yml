@@ -4,9 +4,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-     - "80:8080"
     volumes:
      - web-inf:/usr/local/tomcat/webapps/bimserver/WEB-INF/
+    environment:
+      VIRTUAL_HOST: bim-server.tbe-team.com
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
 volumes:
   web-inf: {}
