@@ -7,8 +7,6 @@ services:
     ports:
      - "80:8080"
     volumes:
-     - database:/usr/local/tomcat/webapps/bimserver/WEB-INF/database
-     - plugins:/usr/local/tomcat/webapps/bimserver/WEB-INF/plugins
+     - web-inf:/usr/local/tomcat/webapps/bimserver/WEB-INF/
 volumes:
-  database: {}
-  plugins: {}
+  web-inf: {}
