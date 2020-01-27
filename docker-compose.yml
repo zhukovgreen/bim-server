@@ -8,6 +8,7 @@ services:
      - web-inf:/usr/local/tomcat/webapps/bimserver/WEB-INF/
     environment:
       VIRTUAL_HOST: bim-server.tbe-team.com
+      VIRTUAL_PORT: 8080
   nginx-proxy:
     image: jwilder/nginx-proxy
     ports:
